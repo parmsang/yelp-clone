@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def new
+   def new
      @restaurant = Restaurant.new
    end
 
@@ -14,5 +14,9 @@ class RestaurantsController < ApplicationController
    def create
      @restaurant = Restaurant.create(restaurant_params)
      redirect_to '/restaurants'
+   end
+
+   def show
+    @restaurant = Restaurant.find(params[:id])
    end
 end
